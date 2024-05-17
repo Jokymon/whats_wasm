@@ -18,3 +18,18 @@ RUN cargo install wasm-pack wasm-bindgen-cli
 
 # Install Wasmer lightweight WASM runtime
 RUN curl https://get.wasmer.io -sSfL | sh
+
+# Install wabt
+RUN <<EOF
+pushd /tmp
+git clone --recursive https://github.com/WebAssembly/wabt
+cd wabt
+git submodule update --init
+
+mkdir build
+cd build
+cmake ..
+cmake --build .
+cmake --install . --prefix "/opt/wabt"
+EOF
+ENV PATH="/opt/wabt/bin:${PATH}"
