@@ -1,0 +1,17 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        const wasmInstance =
+            WebAssembly.instantiateStreaming(fetch("build/20_baremetal.wasm"))
+                .then(prog => {
+                    console.log(prog.instance.exports.wat_add(1, 2));
+                });
+    </script>
+</body>
+
+</html>
