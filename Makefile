@@ -1,4 +1,4 @@
-all: build section_2 section_3 section_20
+all: build section_2 section_3 section_20 section_40
 
 build:
 	mkdir build
@@ -11,6 +11,10 @@ section_3: 03_bigger_example.c
 
 section_20: 20_baremetal.wat
 	wat2wasm 20_baremetal.wat -o build/20_baremetal.wasm
+
+section_40: 40_wasi_example/src/main.rs
+	cd 40_wasi_example; cargo build
+	cd 40_wasi_example; cargo build --target wasm32-wasi
 
 clean:
 	rm -r build/

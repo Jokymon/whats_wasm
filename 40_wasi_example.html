@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <!--<script src="https://raw.githubusercontent.com/ndesmic/wasm-cross/v0/browser/wasi.js"></script>-->
+    <script src="./40_wasi_example.js" type="module"></script>
+</head>
+
+<body>
+    <p>This example uses the Polyfill WASI implementation from
+        <a href="https://github.com/ndesmic/wasm-cross">https://github.com/ndesmic/wasm-cross</a>.
+        See also this
+        <a href="https://dev.to/ndesmic/building-a-minimal-wasi-polyfill-for-browsers-4nel">Blogpost</a>
+        for more details about this implementation.</p>
+
+    <p>Getting stdin to work in the browser environment is non-trivial and not yet easily supported
+        by the GitHub project. For this example I just decided to se the static stdin-input string
+        of the <code>Wasi</code>-class and fill this from a call to <code>prompt</code>.
+    </p>
+
+    <p>Check the console</p>
+</body>
+
+</html>
