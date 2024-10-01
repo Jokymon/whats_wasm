@@ -1,4 +1,4 @@
-FROM emscripten/emsdk:3.1.59
+FROM emscripten/emsdk:3.1.68
 
 RUN apt-get update
 
