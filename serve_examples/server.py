@@ -19,7 +19,7 @@ class HttpRequestHandler(http.server.SimpleHTTPRequestHandler):
     }
     
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, directory="../build", **kwargs)
+        super().__init__(*args, directory="../examples", **kwargs)
 
 
 httpd = socketserver.TCPServer(("localhost", PORT), HttpRequestHandler)

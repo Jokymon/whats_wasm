@@ -7,7 +7,7 @@ const wasi = new Wasi({
     args: []
 });
 
-const { instance } = await WebAssembly.instantiateStreaming(fetch("40_wasi_example/target/wasm32-wasi/debug/wasi_example.wasm"), {
+const { instance } = await WebAssembly.instantiateStreaming(fetch("./build/wasi_example.wasm"), {
     "wasi_snapshot_preview1": wasi
 });
 wasi.instance = instance;

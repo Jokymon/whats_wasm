@@ -1,2 +1,2 @@
-build/
+examples/build/
 40_wasi_example/target/
