@@ -33,3 +33,7 @@ cmake --build .
 cmake --install . --prefix "/opt/wabt"
 EOF
 ENV PATH="/opt/wabt/bin:${PATH}"
+
+# Tools for slide presentation
+RUN apt-get install -y nginx
+COPY nginx.conf /etc/nginx/sites-available/default
