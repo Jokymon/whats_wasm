@@ -112,6 +112,9 @@ interaction between Javascript and the C/C++\-based WASM module. More of that wi
 later.
 
 ---
+layout: iframe-right
+url: http://localhost:8000/02_zz_cpp_example.html
+---
 
 # Example with Emscripten/C (4)
 
@@ -125,7 +128,8 @@ Now we just need to include this in our website
 
 ```javascript
 Module.onRuntimeInitialized = _ => {
-  my_add = Module.cwrap('my_add', 'number', ['number', 'number']);
+  my_add = Module.cwrap('my_add', 'number',
+                        ['number', 'number']);
 }
 ```
 
@@ -134,6 +138,12 @@ Module.onRuntimeInitialized = _ => {
 ```javascript
 let result = my_add(100, 20);
 ```
+
+---
+layout: iframe
+url: http://localhost:8000/build/03_bigger_example.html
+---
+# Complex Emscripten example
 
 ---
 
