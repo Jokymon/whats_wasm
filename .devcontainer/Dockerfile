@@ -20,18 +20,8 @@ RUN cargo install wasm-pack wasm-bindgen-cli
 RUN curl https://get.wasmer.io -sSfL | sh
 
 # Install wabt
-RUN <<EOF
-pushd /tmp
-git clone --recursive https://github.com/WebAssembly/wabt
-cd wabt
-git submodule update --init
-
-mkdir build
-cd build
-cmake ..
-cmake --build .
-cmake --install . --prefix "/opt/wabt"
-EOF
+COPY install_wabt.sh .
+RUN ./install_wabt.sh
 ENV PATH="/opt/wabt/bin:${PATH}"
 
 # Tools for slide presentation
