@@ -26,6 +26,7 @@ fonts:
   mono: Fira Code
 ---
 
+![WebAssembly logo](https://webassembly.github.io/spec/core/_static/webassembly.png){width=125px}
 # Introduction to WebAssembly
 
 A hacked together introduction to WASM concepts and programming
@@ -49,6 +50,17 @@ but then also
 
 > ... but it does not make any Web-specific assumptions or provide Web-specific
 > features, so it can be employed in **other environments** as well.
+
+---
+
+# Who is involved
+
+The W3C works on the advancement of WebAssembly through their [WebAssembly Community Group](https://www.w3.org/community/webassembly/).
+
+One big contributor the WebAssembly efforts is the [Bytecode Alliance](https://bytecodealliance.org/) whos mission is
+
+> ... to provide state-of-the-art foundations for the development of runtime environments and language toolchains
+> where security, efficiency, and modularity can all coexist across a wide range of devices and architectures.
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
