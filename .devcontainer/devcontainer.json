@@ -16,7 +16,7 @@
         "3000": {
             "label": "slidev"
         },
-        "8080": {
+        "8000": {
             "label": "examples"
         }
     }
