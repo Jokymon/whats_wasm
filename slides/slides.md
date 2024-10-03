@@ -228,3 +228,29 @@ more:
 # WASM for plugins
 
 [Extism](https://extism.org/)
+---
+
+# State of WASM
+
+The ABI for high level languages constructs is not really clearly defined. An article from June 3, 2020 of a Finish research group (https://medium.com/wasde/a-look-into-creating-a-modular-application-using-wasm-outside-the-web-caddfa13a349) has built a system around sharing memory and passing pointers and sizes around. But even then, guest and host languages have to agree on the memory layouts for the different types and have to agree, who is responsible for memory allocation and freeing.
+
+On the other hand, efforts have already been made to agree on a more universal ABI. The BytecodeAlliance provides a repository about tool-conventions on GitHub about a C-ABI https://github.com/WebAssembly/tool-conventions/blob/main/BasicCABI.md. A commit from Jan 11, 2019 shows a table with a mapping from C types to WASM. However these are just considered to be possible conventions but not part of the standard.
+
+The future seems to be the "Component Model" that describes interfaces of modules in both directions (imports and exports) in terms of the Wasm Interface Type (WIT) format, an IDL to describe function signatures and components combining multiple functions (https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md)
+
+
+---
+
+# Rust target architectures
+
+| Target                       | WASI | Proposals | Description |
+|------------------------------|------|-----------|-------------|
+| wasm32-unknown-emscripten    |      |           | WebAssembly via Emscripten (only considered for some very special cases) |
+| wasm32-unknown-unknown       |      |           | WebAssembly, more barebone than emscripten (SDL2 and GL for Web) |
+| wasm32-wasi                  | x    |           | WebAssembly with WASI (about to be named wasm32-wasip1)
+| wasm32-wasip1                | x    |           | WebAssembly with WASI
+| wasm32-wasip2                | x    |           | WebAssembly with WASI using the component model
+| wasm32-wasi-preview1-threads | x    | threads   | WebAssembly with WASI thread support (about to be named wasm32-wasip1-threads)
+| wasm64-unknown-unknown       |      | memory64  | WebAssembly using 64-bit memories relying on the memory64 WASM proposal
+
+The target wasm32-unknown-unknown produces a Rust-specific ABI. However the flag `wasm-c-abi` can be used to force the more standard C-ABI (https://doc.rust-lang.org/nightly/unstable-book/compiler-flags/wasm-c-abi.html).
