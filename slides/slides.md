@@ -175,6 +175,14 @@ At the very bottom, WebAssembly defines a very simple **Virtual Machine**.
 
 ---
 
+# Specification
+
+WASM is specified in terms of an EBNF, operational semantics and the mapping to the binary representation.
+
+![](./wasm_specification_parts.png)
+
+---
+
 # WASM == JVM++? Or JVM-\-? 😜
 
 | | **WASM** | **JVM** |
