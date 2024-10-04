@@ -1,7 +1,7 @@
 all: build section_2 section_3 section_20 section_40
 
 build:
-	mkdir build
+	mkdir examples/build
 
 section_2: 02_intro.c
 	emcc -s WASM=1 -s EXPORTED_RUNTIME_METHODS='["cwrap"]' 02_intro.c -o examples/build/02_intro.js
