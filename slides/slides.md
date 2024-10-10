@@ -238,6 +238,14 @@ more:
 [Extism](https://extism.org/)
 ---
 
+# Awesome WASM
+
+This is a unsorted collection of awesome projects and news around WebAssembly.
+
+- The Wasmer project has managed to run [Clang in the Browser](https://wasmer.io/posts/clang-in-browser) and build C/C++ projects without having to install those toolchains locally.
+
+---
+
 # State of WASM
 
 The ABI for high level languages constructs is not really clearly defined. An article from June 3, 2020 of a Finish research group (https://medium.com/wasde/a-look-into-creating-a-modular-application-using-wasm-outside-the-web-caddfa13a349) has built a system around sharing memory and passing pointers and sizes around. But even then, guest and host languages have to agree on the memory layouts for the different types and have to agree, who is responsible for memory allocation and freeing.
