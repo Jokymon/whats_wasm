@@ -270,3 +270,7 @@ The future seems to be the "Component Model" that describes interfaces of module
 | wasm64-unknown-unknown       |      | memory64  | WebAssembly using 64-bit memories relying on the memory64 WASM proposal
 
 The target wasm32-unknown-unknown produces a Rust-specific ABI. However the flag `wasm-c-abi` can be used to force the more standard C-ABI (https://doc.rust-lang.org/nightly/unstable-book/compiler-flags/wasm-c-abi.html).
+
+# From the news
+
+ - [Compiling Haskell to WASM](https://www.tushar-adhatrao.in/blogs/haskell_to_wasm.html)
